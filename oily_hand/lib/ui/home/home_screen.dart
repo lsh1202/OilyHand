@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../main.dart';
+import 'package:oily_hand/services/shock_service.dart';
+import 'package:oily_hand/ui/core/ui/record_cell.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,18 +10,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _shockCount = 0;
+  int todayCount = 0;
+  int maxRecord = 0;
+  List<Map<String, dynamic>> history = [];
 
   @override
   void initState() {
     super.initState();
-    startShockDetection();
+    loadShockData();
+    ShockService.startShockDetection(); // 앱 시작 시 감지도 시작
   }
 
-  Future<void> loadShockCount() async {
-    final count = await getShockCount();
+  Future<void> loadShockData() async {
+    final stats = await ShockService.getShockStats();
     setState(() {
-      _shockCount = count;
+      todayCount = stats['today'] ?? 0;
+      maxRecord = stats['max'] ?? 0;
+      history = List<Map<String, dynamic>>.from(stats['history'] ?? []);
     });
   }
 
@@ -32,14 +37,29 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 40),
               Text(
-                "오늘 폰을 몇 번 떨어뜨렸나요?",
+                "오늘 감지 횟수: $todayCount",
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+              Text(
+                "최고 기록: $maxRecord",
+                style: TextStyle(fontSize: 18, color: Colors.white),
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                "날짜별 감지 히스토리",
                 style: TextStyle(
+                  fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  fontFamily: "Pretendard",
-                  fontSize: 25,
-                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: history.length,
+                  itemBuilder: (context, index) {
+                    final item = history[index];
+                    return RecordCell(date: item["date"], count: item["count"]);
+                  },
                 ),
               ),
             ],
