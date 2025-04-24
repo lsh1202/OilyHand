@@ -45,5 +45,12 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+  		<string>processing</string>
+	</array>
+	<key>NSMotionUsageDescription</key>
+	<string>이 앱은 충격 감지를 위해 모션 센서를 사용합니다.</string>
+
 </dict>
 </plist>
