@@ -1,9 +1,5 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_widgetkit (0.0.1):
-    - Flutter
-  - permission_handler_apple (9.3.0):
-    - Flutter
   - sensors_plus (0.0.1):
     - Flutter
   - sqflite_darwin (0.0.4):
@@ -14,8 +10,6 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - flutter_widgetkit (from `.symlinks/plugins/flutter_widgetkit/ios`)
-  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
   - sensors_plus (from `.symlinks/plugins/sensors_plus/ios`)
   - sqflite_darwin (from `.symlinks/plugins/sqflite_darwin/darwin`)
   - workmanager (from `.symlinks/plugins/workmanager/ios`)
@@ -23,10 +17,6 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  flutter_widgetkit:
-    :path: ".symlinks/plugins/flutter_widgetkit/ios"
-  permission_handler_apple:
-    :path: ".symlinks/plugins/permission_handler_apple/ios"
   sensors_plus:
     :path: ".symlinks/plugins/sensors_plus/ios"
   sqflite_darwin:
@@ -36,12 +26,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_widgetkit: 21fcf04a99462110a8c855b614b97532d7d759b7
-  permission_handler_apple: 4ed2196e43d0651e8ff7ca3483a069d469701f2d
   sensors_plus: 6a11ed0c2e1d0bd0b20b4029d3bad27d96e0c65b
   sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
   workmanager: 01be2de7f184bd15de93a1812936a2b7f42ef07e
 
-PODFILE CHECKSUM: 4305caec6b40dde0ae97be1573c53de1882a07e5
+PODFILE CHECKSUM: 5f655a40e497c93bc569e4e6777b4dd7c27a9db5
 
 COCOAPODS: 1.16.2

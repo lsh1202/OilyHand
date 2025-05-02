@@ -1,25 +1,14 @@
 import 'package:flutter/services.dart';
 
 class ShockService {
-  static const MethodChannel _channel = MethodChannel(
-    'com.example.oilyHand/shock',
-  );
+  static const MethodChannel _channel = MethodChannel('com.example.oilyHand');
 
-  static Future<void> startShockDetection() async {
-    try {
-      await _channel.invokeMethod('startShockDetection');
-    } catch (e) {
-      print("실패: $e");
-    }
+  Future<void> start() async {
+    await _channel.invokeMethod('startShockDetection');
   }
 
-  static Future<Map<String, dynamic>> getShockStats() async {
-    try {
-      final result = await _channel.invokeMethod('getShockStats');
-      return Map<String, dynamic>.from(result);
-    } catch (e) {
-      print("실패: $e");
-      return {};
-    }
+  Future<Map<String, dynamic>> getStats() async {
+    final result = await _channel.invokeMethod('getShockStats');
+    return Map<String, dynamic>.from(result);
   }
 }

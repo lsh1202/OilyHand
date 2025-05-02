@@ -1,14 +1,11 @@
 <component name="libraryTable">
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
     <CLASSES>
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_widgetkit-1.0.3" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sqflite_darwin-2.4.2" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sqflite-2.4.2" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/workmanager-0.5.2" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sqflite_android-2.4.1" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/permission_handler-12.0.0+1" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/sensors_plus-6.1.1" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/permission_handler_html-0.1.3+5" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
